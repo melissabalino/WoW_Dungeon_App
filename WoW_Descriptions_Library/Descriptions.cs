@@ -16,14 +16,14 @@ namespace WoW_Descriptions_Library
             Console.WriteLine("and jagged peaks that pierce the horizon.  The sky above is adorned with stars burning intensely, adding to the"); Thread.Sleep(3500);
             Console.WriteLine("foreboding feeling that ancient secrets and long-forgotten powers linger nearby.\n"); Thread.Sleep(5000);
 
-            Console.WriteLine("Beneath your feet, the ground tells tales of past turmoil and conflict, bearing the weight of history. Ethereal"); Thread.Sleep(3000);
-            Console.WriteLine("foliage surrounds you, emitting a ghostly glow that guides your path through the darkness. Sinister ruins remind you"); Thread.Sleep(3000);
-            Console.WriteLine("of the valley's once powerful civilization, now lost in time. Every rustle in the wind and flicker of shadow suggests"); Thread.Sleep(3500);
+            Console.WriteLine("Beneath your feet, the ground tells tales of past turmoil and conflict, bearing the weight of history.  Ethereal"); Thread.Sleep(3000);
+            Console.WriteLine("foliage surrounds you, emitting a ghostly glow that guides your path through the darkness.  Sinister ruins remind you"); Thread.Sleep(3000);
+            Console.WriteLine("of the valley's once powerful civilization, now lost in time.  Every rustle in the wind and flicker of shadow suggests"); Thread.Sleep(3500);
             Console.WriteLine("spectral forces guarding their secrets with ancient vigilance.\n"); Thread.Sleep(5000);
 
-            Console.WriteLine("Your gaze shifts, and there it stands: THE BLACK TEMPLE. Its imposing silhouette dominates the landscape, emanating "); Thread.Sleep(3000);
-            Console.WriteLine("an aura of darkness and power. Stark against the eerie backdrop of the Shadow Moon Valley, the temple evokes fear"); Thread.Sleep(3000);
-            Console.WriteLine("and fascination, hinting at the formidable challenges within its ancient halls. Its presence intertwines with the"); Thread.Sleep(3500);
+            Console.WriteLine("Your gaze shifts, and there it stands: THE BLACK TEMPLE.  Its imposing silhouette dominates the landscape, emanating "); Thread.Sleep(3000);
+            Console.WriteLine("an aura of darkness and power.  Stark against the eerie backdrop of the Shadow Moon Valley, the temple evokes fear"); Thread.Sleep(3000);
+            Console.WriteLine("and fascination, hinting at the formidable challenges within its ancient halls.  Its presence intertwines with the"); Thread.Sleep(3500);
             Console.WriteLine("valley's mystical allure, leaving you wondering about the enigmas and trials that await in this treacherous realm...\n"); Thread.Sleep(4000);
         }
 
