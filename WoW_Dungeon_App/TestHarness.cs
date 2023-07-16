@@ -8,5 +8,10 @@ namespace WoW_Dungeon_App
 {
     internal class TestHarness
     {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("test");
+
+        }
     }
 }

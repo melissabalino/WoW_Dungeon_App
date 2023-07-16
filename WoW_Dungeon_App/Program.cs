@@ -10,12 +10,12 @@ namespace WoW_Dungeon_App
         static void Main(string[] args)
         {
             Signatures.Header("World of Warcraft: Burning Crusade");
-            Descriptions.Introduction();
+            //Descriptions.Introduction();
             #region Intro and Option to Play Game
             bool isPlaying = false;
             do
             {
-                Console.WriteLine("1) Enter the Black Temple\n2) Quit");
+                Console.WriteLine("1) Explore the Black Temple\n2) Flee");
                 ConsoleKey choice = Console.ReadKey(true).Key;
                 Console.Clear();
                 switch (choice)
@@ -23,7 +23,7 @@ namespace WoW_Dungeon_App
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
                         //TODO add in dungeon game play methods
-                        Console.WriteLine("You have entered the dungeon.");
+                        Descriptions.DungeonEntrance();
                         isPlaying = true;
                         break;
                     case ConsoleKey.D2:

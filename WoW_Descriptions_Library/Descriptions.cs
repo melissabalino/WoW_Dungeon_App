@@ -33,5 +33,16 @@ namespace WoW_Descriptions_Library
             Console.WriteLine("Weakling! Those who lack the courage to face Illidan Stormrage shall find no mercy. The Burning Legion delights\nin the defeat of the feeble-hearted. Your surrender is an admission of your own insignificance.\nEmbrace your failure; it's too late to turn back now. For Azeroth's fate belongs to the bold, not to cowards.");
             Console.ResetColor();
         }
+
+        public static void DungeonEntrance()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\n\n'YOU ARE NOT PREPARED!'\n\n");
+            Console.ResetColor();
+            Console.WriteLine("A dark booming voice reverberates throughout the chambers of the hall.\n\n");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Illidan Stormrage:     'Your presence in the Black Temple surprises me {Player.Name}.  You may have come this far,\n\t\t              but whether you possess the strength to survive what lies ahead remains to be seen...'\n\n\t\t\t\t'YOU ARE NOT PREPARED!'");
+            Console.ResetColor();
+        }
     }
 }
