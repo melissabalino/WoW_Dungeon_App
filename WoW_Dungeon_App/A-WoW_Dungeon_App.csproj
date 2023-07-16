@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <StartupObject>WoW_Dungeon_App.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DungeonLibrary\WoW_DungeonLibrary.csproj" />
+    <ProjectReference Include="..\WoW_Descriptions_Library\WoW_Descriptions_Library.csproj" />
+    <ProjectReference Include="..\WoW_Signatures_Library\WoW_Signatures_Library.csproj" />
+  </ItemGroup>
+
+</Project>
