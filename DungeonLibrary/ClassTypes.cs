@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace WoW_DungeonLibrary
 {
-    public enum Faction
+    public enum ClassTypes
     {
-        Alliance = 1,
-        Horde,
-
+        Warlock = 1,
+        Priest,
+        Warrior,
+        Hunter,
+        Druid,
+        Tauren
     }
 }
