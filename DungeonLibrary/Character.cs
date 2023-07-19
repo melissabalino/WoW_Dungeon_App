@@ -1,4 +1,4 @@
-﻿namespace DungeonLibrary
+﻿namespace WoW_DungeonLibrary
 {
     public abstract class Character
     {
@@ -12,29 +12,17 @@
 
         //PROPERTIES
 
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
+        public string Name { get; set; }
+        
 
-        public int HitChance
-        {
-            get { return _hitChance; }
-            set { _hitChance = value; }
-        }
+        public int HitChance { get; set; }
+       
 
-        public int Dodge
-        {
-            get { return _dodge; }
-            set { _dodge = value; }
-        }
+        public int Dodge { get; set; }
+        
 
-        public int MaxLife
-        {
-            get { return _maxLife; }
-            set { _maxLife = value; }
-        }
+        public int MaxLife { get; set; }
+       
 
         public int Life
         {
@@ -68,23 +56,23 @@
         //METHODS
         public override string ToString()
         {
-            return $"----{Name}----\n" +
+            return $"=-=-=-=-=- {Name} -=-=-=-=-=\n" +
                    $"Life: {Life} out of {MaxLife}\n" +
                    $"Hit Chance: {HitChance}\n" +
                    $"Dodge: {Dodge}%\n";
         }
 
-        public virtual int CalcDodge()
-        {
-            return Dodge;
-        }
+        //public virtual int CalcDodge()
+        //{
+        //    return Dodge;
+        //}
 
-        public virtual int CalcHitChance()
-        {
-            return HitChance;
-        }
+        //public virtual int CalcHitChance()
+        //{
+        //    return HitChance;
+        //}
       
-        public abstract int CalcDamage();
+        //public abstract int CalcDamage();
 
     }
 }

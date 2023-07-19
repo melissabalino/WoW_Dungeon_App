@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WoW_DungeonLibrary;
 
 namespace WoW_Dungeon_App
 {
@@ -10,8 +11,13 @@ namespace WoW_Dungeon_App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("test");
 
+
+            HumanWarlock humanWarlock = new HumanWarlock();
+            Console.WriteLine(humanWarlock);
+
+            HumanHunter humanHunter = new HumanHunter();
+            Console.WriteLine(humanHunter);
         }
     }
 }
