@@ -33,7 +33,7 @@ namespace WoW_Dungeon_App
                         isPlaying = true;
                         return;
                     default:
-                        Console.WriteLine("Input not recognized. Please try again.");
+                        Console.WriteLine("Aye, that choice be invalid. Try again, adventurer.");
                         break;
                 }
 

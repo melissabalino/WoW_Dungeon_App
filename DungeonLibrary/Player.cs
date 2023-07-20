@@ -38,7 +38,7 @@ namespace WoW_DungeonLibrary
                    $"Faction: {Faction}\n" +
                    $"Race: {Race}\n" +
                    $"Class: {PlayerClass}\n" +
-                   $"{(IsEnhanced ? "Enhanced Heroism: +10 damage" : "No Enhanced Heroism")}\n"+
+                   $"{(IsEnhanced ? "Enhanced Heroism: +10 power" : "No Enhanced Heroism")}\n"+
                    $"Description: \n{Description}";
         }
 
@@ -49,11 +49,24 @@ namespace WoW_DungeonLibrary
 
             HumanHunter humanHunter = new HumanHunter();
             Console.WriteLine(humanHunter);
-            //public override int CalcDamage()
-            //{
-            //    throw new NotImplementedException();
 
-            //}
+            GnomeWarlock gnomeWarlock = new GnomeWarlock();
+            Console.WriteLine(gnomeWarlock);
+
+            GnomeHunter gnomeHunter = new GnomeHunter();
+            Console.WriteLine(gnomeHunter);
+
+            UndeadWarlock undeadWarlock = new UndeadWarlock();
+            Console.WriteLine(undeadWarlock);
+
+            UndeadHunter undeadHunter = new UndeadHunter();
+            Console.WriteLine(undeadHunter);
+
+            BloodElfWarlock bloodElfWarlock = new BloodElfWarlock();
+            Console.WriteLine(bloodElfWarlock);
+
+            BloodElfHunter bloodElfHunter = new BloodElfHunter();
+            Console.WriteLine(bloodElfHunter);
         }
     }
 }
