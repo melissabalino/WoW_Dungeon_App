@@ -43,6 +43,7 @@ namespace WoW_Descriptions_Library
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Illidan Stormrage:     'Your presence in the Black Temple surprises me.  You may have come this far,\n\t\t              but whether you possess the strength to survive what lies ahead remains to be seen...'\n\n\t\t\t\t'YOU ARE NOT PREPARED!'");
             Console.ResetColor();
+            Console.WriteLine("=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=");
         }
     }
 }

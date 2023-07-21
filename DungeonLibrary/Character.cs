@@ -56,9 +56,9 @@
         //METHODS
         public override string ToString()
         {
-            return $"=-=-=-=-=- {Name} -=-=-=-=-=\n" +
-                   $"Life: {Life} out of {MaxLife}\n" +
-                   $"Hit Chance: {HitChance}\n" +
+            return $"=~-~=~-~=~-~=~-~=~-~=~-~= {Name} =~-~=~-~=~-~=~-~=~-~=~-~=\n" +
+                   $"Health: {Life} out of {MaxLife}\n" +
+                   $"HitChance: {HitChance}%\n" +
                    $"Dodge: {Dodge}%\n";
         }
 

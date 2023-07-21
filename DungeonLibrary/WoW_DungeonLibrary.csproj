@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WoW_Descriptions_Library\WoW_Descriptions_Library.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WoW_Descriptions_Library;
 
 namespace WoW_DungeonLibrary
 {
@@ -39,34 +40,54 @@ namespace WoW_DungeonLibrary
                    $"Race: {Race}\n" +
                    $"Class: {PlayerClass}\n" +
                    $"{(IsEnhanced ? "Enhanced Heroism: +10 power" : "No Enhanced Heroism")}\n"+
-                   $"Description: \n{Description}";
+                   $"Description: \n\t{Description}\n" +
+                   $"=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=";
         }
 
-        public static void PlayerSelection()
+        public static Player PlayerOptions()
         {
+            //Descriptions.DungeonEntrance();
+            Console.WriteLine("Choose your Character:\n1) Eleanor Oakheart\n2) Victoria NightShade\n3) Widget Cogsworth\n4) Fizzle Quickspark\n5) Mortimer Darkbane\n6) Grimwald Shadowfang\n7) Kael'thas Emberblade\n8) Lor'themar Sunshard");
+            char charChoice = Console.ReadKey(true).KeyChar;
+            Console.Clear();
+            switch (charChoice)
+            {
+                case '1':
+                    return new HumanWarlock();
+                    break;
+                case '2':
+                    return new HumanHunter();
+                    break;
+                case '3':
+                    return new GnomeWarlock();
+                    break;
+                case '4':
+                    return new GnomeHunter();
+                    break;
+                case '5':
+                    return new UndeadWarlock();
+                    break;
+                case '6':
+                    return new UndeadHunter();
+                    break;
+                case '7':
+                    return new BloodElfWarlock();
+                    break;
+                case '8':
+                    return new BloodElfHunter();
+                    break;
+                default:
+                    return new GnomeHunter();
+                    break;
+            }
             HumanWarlock humanWarlock = new HumanWarlock();
-            Console.WriteLine(humanWarlock);
-
             HumanHunter humanHunter = new HumanHunter();
-            Console.WriteLine(humanHunter);
-
             GnomeWarlock gnomeWarlock = new GnomeWarlock();
-            Console.WriteLine(gnomeWarlock);
-
             GnomeHunter gnomeHunter = new GnomeHunter();
-            Console.WriteLine(gnomeHunter);
-
             UndeadWarlock undeadWarlock = new UndeadWarlock();
-            Console.WriteLine(undeadWarlock);
-
             UndeadHunter undeadHunter = new UndeadHunter();
-            Console.WriteLine(undeadHunter);
-
             BloodElfWarlock bloodElfWarlock = new BloodElfWarlock();
-            Console.WriteLine(bloodElfWarlock);
-
             BloodElfHunter bloodElfHunter = new BloodElfHunter();
-            Console.WriteLine(bloodElfHunter);
         }
     }
 }

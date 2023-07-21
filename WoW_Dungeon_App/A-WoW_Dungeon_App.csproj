@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>WoW_Dungeon_App.TestHarness</StartupObject>
+    <StartupObject>WoW_Dungeon_App.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
