@@ -14,7 +14,7 @@ namespace WoW_Dungeon_App
         static void Main(string[] args)
         {
             Signatures.Header("World of Warcraft: Burning Crusade");
-            //       mDescriptions.Introduction();
+            //Descriptions.Introduction();
             #region Character/Player Creation
             //TODO create Monster Types
 
