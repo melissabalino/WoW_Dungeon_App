@@ -56,23 +56,23 @@
         //METHODS
         public override string ToString()
         {
-            return $"=~-~=~-~=~-~=~-~=~-~=~-~= {Name} =~-~=~-~=~-~=~-~=~-~=~-~=\n" +
-                   $"Health: {Life} out of {MaxLife}\n" +
-                   $"HitChance: {HitChance}%\n" +
-                   $"Dodge: {Dodge}%\n";
+            return $"\n=~-~=~-~=~-~=~-~=~-~=~-~= {Name} =~-~=~-~=~-~=~-~=~-~=~-~=\n\n" +
+                   $"Health: {Life} out of {MaxLife}\t\t" +
+                   $"HitChance: {HitChance}%\t\t\t" +
+                   $"Dodge: {Dodge}%\n\n";
         }
 
-        //public virtual int CalcDodge()
-        //{
-        //    return Dodge;
-        //}
+        public virtual int CalcDodge()
+        {
+            return Dodge;
+        }
 
-        //public virtual int CalcHitChance()
-        //{
-        //    return HitChance;
-        //}
-      
-        //public abstract int CalcDamage();
+        public virtual int CalcHitChance()
+        {
+            return HitChance;
+        }
+
+        public abstract int CalcDamage();
 
     }
 }

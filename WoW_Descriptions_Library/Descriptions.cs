@@ -45,5 +45,10 @@ namespace WoW_Descriptions_Library
             Console.ResetColor();
             Console.WriteLine("=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=");
         }
+
+        public static void WeaponDescriptions()
+        {
+            Console.WriteLine("Dagger: A swift and agile weapon allowing for quick strikes and precise critical hits.\n\nSword: A versatile melee weapon providing a balance of speed, damage, and defensive capabilities.\n\nStaff: A magical weapon that enhances arcane powers and ability to channel potent spells.\n\nBow: Offers high damage from a distance and grants the ability to attack enemies beyond melee range.");
+        }
     }
 }

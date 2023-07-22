@@ -28,15 +28,15 @@ namespace WoW_DungeonLibrary
         public override string ToString()
         {
             return base.ToString() +
-                   $"Damage: {MinDamage} to {MaxDamage}\n" +
-                   $"Description: {Description}\n" +
+                   $"Attack Strength: {MinDamage} to {MaxDamage} power\n\n" +
+                   $"Description: {Description}\n\n" +
                    $"=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=";
         }
-        public static Monster GetMonster()
+        public static Queue<Monster> GetMonsters()
         {
             Direwolf direwolf = new Direwolf("Direwolf", 50, 25, 25, 10, 7, "A fierce and formidable wolf, renowned for its strength and hunting prowess.", 50);
             WastewanderBandit wastewanderBandit = new WastewanderBandit("Wastewander Bandit", 15, 25, 25, 12, 7, "A cunning and elusive desert outlaw, preying on unsuspecting travelers in arid regions.", 50);
-            Monster m3 = new Monster("Ghostly Steward", 50, 25, 25, 10, 7, "An ethereal servant bound to a haunted estate, forever carrying out its spectral duties.");
+            GhostlySteward ghostlySteward = new GhostlySteward("Ghostly Steward", 50, 25, 25, 10, 7, "An ethereal servant bound to a haunted estate, forever carrying out its spectral duties.", 50);
             Monster m4 = new Monster("Plague Bear", 50, 25, 25, 10, 7, "A corrupted and diseased bear, spreading pestilence wherever it roams.");
             Monster m5 = new Monster("Frost Fire Basilisk", 50, 25, 25, 10, 7, "A reptilian creature embodying both icy and fiery elements, known for its deadly breath.");
             Monster m6 = new Monster("Shadowcaster", 50, 25, 25, 10, 7, "An elusive spellcaster adept at manipulating shadows and weaving dark magic.");
@@ -47,26 +47,33 @@ namespace WoW_DungeonLibrary
 
             Direwolf wolf = new Direwolf();
             WastewanderBandit bandit = new WastewanderBandit();
+            GhostlySteward ghost = new GhostlySteward();
             //List<Monster> monsters = new()
             //{
             //    direwolf,
             //    wastewanderBandit,
+            //    ghostlySteward,
 
             //};
-            //    int index = new Random().Next(monsters.Count);
-            //    return monsters[index];
-
+            //int index = new Random().Next(monsters.Count);
+            //return monsters[index];
+           
+          
             Queue<Monster> m = new Queue<Monster>();
             m.Enqueue(direwolf);
             m.Enqueue(wastewanderBandit);
-            m.Enqueue(m3);
+            m.Enqueue(ghostlySteward);
             m.Enqueue(m4);
             m.Enqueue(m5);
             m.Enqueue(m6);
+           
+            return m;
 
-            return m.Dequeue();
-        
-        
-        } 
+        }
+
+        public override int CalcDamage()
+        {
+            return new Random().Next(MinDamage, MaxDamage + 1);
+        }
     }
 }
