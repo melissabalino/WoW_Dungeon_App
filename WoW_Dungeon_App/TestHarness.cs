@@ -11,7 +11,8 @@ namespace WoW_Dungeon_App
     {
         static void Main(string[] args)
         {
-            Player player = Player.PlayerOptions();
+            Console.WriteLine(Console.WindowWidth);
+            Console.WriteLine(Console.WindowHeight);
         }
     }
 }

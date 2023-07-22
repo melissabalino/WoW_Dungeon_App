@@ -30,7 +30,7 @@ namespace WoW_Descriptions_Library
         public static void Quitter()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Weakling! Those who lack the courage to face Illidan Stormrage shall find no mercy. The Burning Legion delights\nin the defeat of the feeble-hearted. Your surrender is an admission of your own insignificance.\nEmbrace your failure; it's too late to turn back now. For Azeroth's fate belongs to the bold, not to cowards.");
+            Console.WriteLine("\n\nWeakling! Those who lack the courage to face Illidan Stormrage shall find no mercy.\nEmbrace your failure; for Azeroth's fate belongs to the bold, not to cowards.\n");
             Console.ResetColor();
         }
 

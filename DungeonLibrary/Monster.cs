@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using WoW_Descriptions_Library;
 
 namespace WoW_DungeonLibrary
 {
@@ -37,37 +39,36 @@ namespace WoW_DungeonLibrary
             Direwolf direwolf = new Direwolf("Direwolf", 50, 25, 25, 10, 7, "A fierce and formidable wolf, renowned for its strength and hunting prowess.", 50);
             WastewanderBandit wastewanderBandit = new WastewanderBandit("Wastewander Bandit", 15, 25, 25, 12, 7, "A cunning and elusive desert outlaw, preying on unsuspecting travelers in arid regions.", 50);
             GhostlySteward ghostlySteward = new GhostlySteward("Ghostly Steward", 50, 25, 25, 10, 7, "An ethereal servant bound to a haunted estate, forever carrying out its spectral duties.", 50);
-            Monster m4 = new Monster("Plague Bear", 50, 25, 25, 10, 7, "A corrupted and diseased bear, spreading pestilence wherever it roams.");
-            Monster m5 = new Monster("Frost Fire Basilisk", 50, 25, 25, 10, 7, "A reptilian creature embodying both icy and fiery elements, known for its deadly breath.");
-            Monster m6 = new Monster("Shadowcaster", 50, 25, 25, 10, 7, "An elusive spellcaster adept at manipulating shadows and weaving dark magic.");
-            Monster m7 = new Monster("Abyss Serpent", 50, 25, 25, 10, 7, "A serpentine behemoth dwelling in the darkest depths of the ocean, luring ships to their doom.");
-            Monster m8 = new Monster("Fire Dragon", 50, 25, 25, 10, 7, "A mighty and fearsome dragon, wreathed in flames and capable of laying waste to entire landscapes.");
-            Monster m9 = new Monster("Frost Dragon", 50, 25, 25, 10, 7, " A majestic dragon, wielding the power of ice to freeze its foes in their tracks.");
-            Monster m10 = new Monster("Nether Dragon", 50, 25, 25, 10, 7, "An otherworldly dragon, hailing from the Twisting Nether and wielding arcane energies beyond mortal comprehension.");
+            PlagueBear plagueBear = new PlagueBear("Plague Bear", 50, 25, 25, 10, 7, "A corrupted and diseased bear, spreading pestilence wherever it roams.");
+            FrostFireBasilisk frostFireBasilisk = new FrostFireBasilisk("Frost Fire Basilisk", 50, 25, 25, 10, 7, "A reptilian creature embodying both icy and fiery elements, known for its deadly breath.");
+            ShadowCaster shadowcaster = new ShadowCaster("Shadowcaster", 50, 25, 25, 10, 7, "An elusive spellcaster adept at manipulating shadows and weaving dark magic.");
+            AbyssSerpent abyssSerpent = new AbyssSerpent("Abyss Serpent", 50, 25, 25, 10, 7, "A serpentine behemoth dwelling in the darkest depths of the ocean, luring ships to their doom.");
+            FireDragon fireDragon = new FireDragon("Fire Dragon", 50, 25, 25, 10, 7, "A mighty and fearsome dragon, wreathed in flames and capable of laying waste to entire landscapes.");
+            FrostDragon frostDragon = new FrostDragon("Frost Dragon", 50, 25, 25, 10, 7, "A majestic dragon, wielding the power of ice to freeze its foes in their tracks.");
+            NetherDragon netherDragon = new NetherDragon("Nether Dragon", 50, 25, 25, 10, 7, "An otherworldly dragon, hailing from the Twisting Nether and wielding arcane energies beyond mortal comprehension.");
+            Monster illidanStormrage = new Monster("Illidan Stormrage", 100, 50, 30, 15, 10, "A powerful and complex night elf, whose mastery of arcane and demonic powers make him both a fearsome ally and a dangerous adversary");
 
             Direwolf wolf = new Direwolf();
             WastewanderBandit bandit = new WastewanderBandit();
             GhostlySteward ghost = new GhostlySteward();
-            //List<Monster> monsters = new()
-            //{
-            //    direwolf,
-            //    wastewanderBandit,
-            //    ghostlySteward,
-
-            //};
-            //int index = new Random().Next(monsters.Count);
-            //return monsters[index];
-           
-          
+                       
             Queue<Monster> m = new Queue<Monster>();
             m.Enqueue(direwolf);
             m.Enqueue(wastewanderBandit);
             m.Enqueue(ghostlySteward);
-            m.Enqueue(m4);
-            m.Enqueue(m5);
-            m.Enqueue(m6);
-           
+            m.Enqueue(plagueBear);
+            m.Enqueue(frostFireBasilisk);
+            m.Enqueue(shadowcaster);
+            m.Enqueue(abyssSerpent);
+            m.Enqueue(fireDragon);
+            m.Enqueue(frostDragon);
+            m.Enqueue(netherDragon);
+            m.Enqueue(illidanStormrage);
             return m;
+            //if (m.Count == 0)
+            //{
+            //    reload = true;
+            //}
 
         }
 
@@ -75,5 +76,7 @@ namespace WoW_DungeonLibrary
         {
             return new Random().Next(MinDamage, MaxDamage + 1);
         }
+
+        
     }
 }

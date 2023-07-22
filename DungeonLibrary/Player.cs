@@ -53,6 +53,7 @@ namespace WoW_DungeonLibrary
 
         public static Player PlayerOptions()
         {
+
             Console.WriteLine("\nChoose your Character:\n\t1) Eleanor Oakheart\n\t2) Victoria NightShade\n\t3) Widget Cogsworth\n\t4) Fizzle Quickspark\n\t5) Mortimer Darkbane\n\t6) Grimwald Shadowfang\n\t7) Kael'thas Emberblade\n\t8) Lor'themar Sunshard");
             char charChoice = Console.ReadKey(true).KeyChar;
             Console.Clear();
@@ -60,12 +61,11 @@ namespace WoW_DungeonLibrary
             {
                 case '1':
                     Descriptions.DungeonEntrance();
-
                     return new HumanWarlock();
                     break;
                 case '2':
                     Descriptions.DungeonEntrance();
-                    return new HumanHunter();
+                    return new HumanWarrior();
                     break;
                 case '3':
                     Descriptions.DungeonEntrance();
@@ -73,7 +73,7 @@ namespace WoW_DungeonLibrary
                     break;
                 case '4':
                     Descriptions.DungeonEntrance();
-                    return new GnomeHunter();
+                    return new GnomeWarrior();
                     break;
                 case '5':
                     Descriptions.DungeonEntrance();
@@ -81,7 +81,7 @@ namespace WoW_DungeonLibrary
                     break;
                 case '6':
                     Descriptions.DungeonEntrance();
-                    return new UndeadHunter();
+                    return new UndeadWarrior();
                     break;
                 case '7':
                     Descriptions.DungeonEntrance();
@@ -89,21 +89,22 @@ namespace WoW_DungeonLibrary
                     break;
                 case '8':
                     Descriptions.DungeonEntrance();
-                    return new BloodElfHunter();
+                    return new BloodElfWarrior();
                     break;
                 default:
                     Descriptions.DungeonEntrance();
-                    return new GnomeHunter();
+                    return new GnomeWarrior();
                     break;
             }
             HumanWarlock humanWarlock = new HumanWarlock();
-            HumanHunter humanHunter = new HumanHunter();
+            HumanWarrior humanHunter = new HumanWarrior();
             GnomeWarlock gnomeWarlock = new GnomeWarlock();
-            GnomeHunter gnomeHunter = new GnomeHunter();
+            GnomeWarrior gnomeHunter = new GnomeWarrior();
             UndeadWarlock undeadWarlock = new UndeadWarlock();
-            UndeadHunter undeadHunter = new UndeadHunter();
+            UndeadWarrior undeadHunter = new UndeadWarrior();
             BloodElfWarlock bloodElfWarlock = new BloodElfWarlock();
-            BloodElfHunter bloodElfHunter = new BloodElfHunter();
+            BloodElfWarrior bloodElfHunter = new BloodElfWarrior();
+
         }
 
         public override int CalcDamage()
@@ -113,8 +114,8 @@ namespace WoW_DungeonLibrary
             int bonusDamage = 0;
             if (IsEnhanced)
             {
-               bonusDamage = 10;
-               Console.WriteLine("Your Warlock ability enhanced your attack power.");
+                bonusDamage = 10;
+                Console.WriteLine("Your Warlock ability enhanced your attack power.");
             }
             return damage + bonusDamage;
         }

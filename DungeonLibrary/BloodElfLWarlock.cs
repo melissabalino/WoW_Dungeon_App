@@ -19,7 +19,7 @@ namespace WoW_DungeonLibrary
             Race = "Blood Elf";
             PlayerClass = "Warlock";
             IsEnhanced = true;
-            Description = "A gifted Blood Elf sorcerer, Kael'thas Emberblade turned to dark magic after witnessing the destruction of his homeland during the Scourge invasion. Consumed by vengeance and thirst for power, he made a pact with demonic forces, wielding fel energy to rebuild his shattered kingdom and secure the future of his people, even if it meant risking his very soul.";
+            Description = "A gifted Blood Elf sorcerer, Kael'thas Emberblade turned to dark magic after witnessing the destruction \nof his homeland during the Scourge invasion. Consumed by vengeance and thirst for power, he made a pact with demonic \nforces, wielding fel energy to rebuild his shattered kingdom and secure the future of his people, even if it meant \nrisking his very soul.";
         }
 
 

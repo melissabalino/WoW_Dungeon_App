@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoW_Signatures_Library", "W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoW_Descriptions_Library", "WoW_Descriptions_Library\WoW_Descriptions_Library.csproj", "{FCA7E83F-0C49-4719-8DC2-CB872BFDC6DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{17DCDAA6-212D-4E5C-8FCA-846BE819700B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoW_UnitTests", "UnitTests\WoW_UnitTests.csproj", "{17DCDAA6-212D-4E5C-8FCA-846BE819700B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

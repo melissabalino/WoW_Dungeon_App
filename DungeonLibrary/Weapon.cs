@@ -48,7 +48,7 @@ namespace WoW_DungeonLibrary
         public override string ToString()
         {
             return $"\nEquipped Weapon: {Name}\t\t" +
-                   $"Weapon Strength: {MinDamage} to {MaxDamage}\t\t" +
+                   $"Weapon Strength: {MinDamage} to {MaxDamage}\t" +
                    $"Weapon Bonus Hit Chance: {BonusHitChance}%\n\n" +
                    $"Weapon Description: The {Type} is a {Description}\n\n" +
                    $"=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=~-~=";
@@ -68,7 +68,7 @@ namespace WoW_DungeonLibrary
                     return dagger;
                     break;
                 case '2':
-                    Weapon sword = new Weapon("Sword", 5, 15, 25, "versatile melee weapon providing a balance of speed, damage, and defensive capabilities.", WeaponTypes.Sword);
+                    Weapon sword = new Weapon("Sword", 5, 15, 25, "melee weapon providing a balance of speed, damage, and defensive capabilities.", WeaponTypes.Sword);
                     return sword;
                     break;
                 case '3':
@@ -76,7 +76,7 @@ namespace WoW_DungeonLibrary
                     return staff;
                     break;
                 case '4':
-                    Weapon bow = new Weapon("Bow", 5, 15, 25, "weapon that offers high damage from a distance and grants the ability to attack enemies beyond melee range.", WeaponTypes.Bow);
+                    Weapon bow = new Weapon("Bow", 5, 15, 25, "weapon that offers high damage from a distance and grants the ability to attack \neenemies beyond melee range.", WeaponTypes.Bow);
                     return bow;
                     break;
                 default:
