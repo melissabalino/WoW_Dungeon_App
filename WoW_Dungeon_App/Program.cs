@@ -32,72 +32,74 @@ namespace WoW_Dungeon_App
                         Player player = Player.PlayerOptions();
                         player.EquippedWeapon = Weapon.WeaponOptions();
                         Queue<Monster> monsters = Monster.GetMonsters();
-                        #region Main Game Loop
-                        bool exit = false;
-                        do
+                        while (monsters.Count > 0)
                         {
-                            Monster monster = monsters.Dequeue();
-                            Console.WriteLine(GetRoom()); 
-                            Thread.Sleep(500); 
-                            Console.WriteLine($"Suddenly, you catch the attention of a {monster.Name} as it runs to attack you!"); ;
-                            #region Encounter Loop
-                            bool reload = false;
+                            #region Main Game Loop
+                            bool exit = false;
                             do
                             {
-                                #region Menu
-                                Console.WriteLine("\nPlease choose an action:\n\t" +
-                                      "A) Attack\n\t" +
-                                      //"R) Run Away\n\t" +
-                                      "P) Player Info\n\t" +
-                                      "M) Monster Info\n\t" +
-                                      "E) Exit\n");
-                                ConsoleKey selection = Console.ReadKey(true).Key;
-                                Console.Clear();
-                                switch (selection)
+                                Monster monster = monsters.Dequeue();
+                                Console.WriteLine(GetRoom());
+                                Thread.Sleep(500);
+                                Console.WriteLine($"Suddenly, you catch the attention of a {monster.Name} as it prepares to attack you!"); ;
+                                #region Encounter Loop
+                                bool reload = false;
+                                do
                                 {
-                                    case ConsoleKey.A:
-                                       reload = Combat.DoBattle(player, monster);
-                                        break;
+                                    #region Menu
+                                    Console.WriteLine("\nPlease choose an action:\n\t" +
+                                          "A) Attack\n\t" +
+                                          //"R) Run Away\n\t" +
+                                          "P) Player Info\n\t" +
+                                          "M) Monster Info\n\t" +
+                                          "E) Exit\n");
+                                    ConsoleKey selection = Console.ReadKey(true).Key;
+                                    Console.Clear();
+                                    switch (selection)
+                                    {
+                                        case ConsoleKey.A:
+                                            reload = Combat.DoBattle(player, monster);
+                                            break;
 
-                                    //case ConsoleKey.R:
-                                    //    Console.WriteLine($"\nRun Away! {monster.Name} attacks you as you flee.\n");
+                                        //case ConsoleKey.R:
+                                        //    Console.WriteLine($"\nRun Away! {monster.Name} attacks you as you flee.\n");
 
-                                    //    //Combat.DoAttack(monster, player);
-                                    //    reload = true;//"reload" the monster and the room
-                                    //    break;
-                                    case ConsoleKey.P:
-                                        Console.WriteLine(player);
-                                        break;
-                                    case ConsoleKey.M:
-                                        Console.WriteLine(monster);
-                                        break;
-                                    case ConsoleKey.E:
-                                    case ConsoleKey.Escape:
-                                    case ConsoleKey.X:
-                                        Descriptions.Quitter();
+                                        //    //Combat.DoAttack(monster, player);
+                                        //    reload = true;//"reload" the monster and the room
+                                        //    break;
+                                        case ConsoleKey.P:
+                                            Console.WriteLine(player);
+                                            break;
+                                        case ConsoleKey.M:
+                                            Console.WriteLine(monster);
+                                            break;
+                                        case ConsoleKey.E:
+                                        case ConsoleKey.Escape:
+                                        case ConsoleKey.X:
+                                            Descriptions.Quitter();
+                                            exit = true;
+                                            break;
+                                        default:
+                                            Console.WriteLine("Aye, that choice be invalid. Try again, adventurer.");
+                                            break;
+                                    }//end switch
+
+                                    if (player.Life <= 0)
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine("\nYou were not prepared for the true might of Illidan Stormrage...");
+                                        Console.ResetColor();
                                         exit = true;
-                                        break;
-                                    default:
-                                        Console.WriteLine("Aye, that choice be invalid. Try again, adventurer.");
-                                        //testing only
-                                        //player.Life += 100;
-                                        break;
-                                }//end switch
-
-                                if (player.Life <= 0)
-                                {
-                                    Console.WriteLine("Death conquers all...");
-                                    exit = true;
-                                }
-
+                                    }
+                                    #endregion
+                                } while (!reload && !exit);
                                 #endregion
-                            } while (!reload && !exit);
+                            } while (!exit);
                             #endregion
-                        } while (!exit);
-                        #endregion
-
-                        isPlaying = true;
-                        break;
+                        }
+                            isPlaying = true;
+                            break;
+                        
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
                     case ConsoleKey.Escape:
@@ -111,9 +113,11 @@ namespace WoW_Dungeon_App
 
             } while (!isPlaying);
             #endregion
+            Console.WriteLine($"You defeated {player.Score} monster{(player.Score == 1 ? "." : "s.")}");
+            //Do you want to play again? 
+            //if input == "Y" then Main(args);
 
-
-        }
+        }//end Main()
         #region Room Generation
         private static string GetRoom()
         {

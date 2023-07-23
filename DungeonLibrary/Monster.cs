@@ -45,7 +45,7 @@ namespace WoW_DungeonLibrary
             AbyssSerpent abyssSerpent = new AbyssSerpent("Abyss Serpent", 50, 25, 25, 10, 7, "A serpentine behemoth dwelling in the darkest depths of the ocean, luring ships to their doom.");
             FireDragon fireDragon = new FireDragon("Fire Dragon", 50, 25, 25, 10, 7, "A mighty and fearsome dragon, wreathed in flames and capable of laying waste to entire landscapes.");
             FrostDragon frostDragon = new FrostDragon("Frost Dragon", 50, 25, 25, 10, 7, "A majestic dragon, wielding the power of ice to freeze its foes in their tracks.");
-            NetherDragon netherDragon = new NetherDragon("Nether Dragon", 50, 25, 25, 10, 7, "An otherworldly dragon, hailing from the Twisting Nether and wielding arcane energies beyond mortal comprehension.");
+            NetherDragon netherDragon = new NetherDragon("Nether Dragon", 50, 25, 25, 10, 7, "An otherworldly dragon, hailing from the Twisting Nether and wielding arcane energies beyond mortal \ncomprehension.");
             Monster illidanStormrage = new Monster("Illidan Stormrage", 100, 50, 30, 15, 10, "A powerful and complex night elf, whose mastery of arcane and demonic powers make him both a fearsome ally and a dangerous adversary");
 
             Direwolf wolf = new Direwolf();
