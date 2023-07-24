@@ -11,8 +11,8 @@ namespace WoW_DungeonLibrary
         public BloodElfWarrior()
         {
             Name = "Lor'themar Sunshard";
-            HitChance = 70;
-            Dodge = 50;
+            HitChance = 75;
+            Dodge = 25;
             MaxLife = 100;
             Life = 100;
             Faction = "Horde";

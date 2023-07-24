@@ -37,10 +37,10 @@ namespace WoW_DungeonLibrary
             {
                 DoAttack(monster, player);
                 return false;
-            }       
+            }
             else
             {
-                player.Score++;//
+                player.Score++;
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"\nYou have slain {monster.Name}!");
                 Console.ResetColor();

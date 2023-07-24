@@ -12,7 +12,7 @@ namespace WoW_DungeonLibrary
         {
             Name = "Eleanor Oakheart";
             HitChance = 75;
-            Dodge = 50;
+            Dodge = 25;
             MaxLife = 100;
             Life = 100;
             Faction = "Alliance";

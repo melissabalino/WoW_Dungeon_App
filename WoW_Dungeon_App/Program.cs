@@ -6,6 +6,7 @@ using WoW_DungeonLibrary;
 using System.Threading;
 using System.Numerics;
 using System.Xml.Linq;
+using System.Reflection;
 
 namespace WoW_Dungeon_App
 {
@@ -15,9 +16,8 @@ namespace WoW_Dungeon_App
         {
             Console.SetWindowSize(120, 30);
             Signatures.Header("World of Warcraft: Burning Crusade");
-           // Descriptions.Introduction();
-           
-            #region Intro and Option to Play Game
+            //Descriptions.Introduction();
+
             bool isPlaying = false;
             do
             {
@@ -31,25 +31,32 @@ namespace WoW_Dungeon_App
                         Descriptions.DungeonEntrance();
                         Player player = Player.PlayerOptions();
                         player.EquippedWeapon = Weapon.WeaponOptions();
+                       
                         Queue<Monster> monsters = Monster.GetMonsters();
-                        while (monsters.Count > 0)
+                        //Monster lastMonster = monsters.Peek();
+                        bool exit = false;
+                        do
                         {
-                            #region Main Game Loop
-                            bool exit = false;
+                            //Monster monster = Monster.GetMonsters();
+                            //Queue<Monster> monsters = Monster.GetMonsters();
+                            //Monster lastMonster = monsters.Peek();
+                            //if (lastMonster.Life > 0)
+                            //{
+                            // bool exit = false;
+                            //do
+                            //{
+                            Monster monster = monsters.Dequeue();
+                            Console.WriteLine(GetRoom());
+                            Thread.Sleep(500);
+                            Console.WriteLine($"Suddenly, you catch the attention of a {monster.Name} as it prepares to attack you!"); ;
+
+                            bool reload = false;
                             do
                             {
-                                Monster monster = monsters.Dequeue();
-                                Console.WriteLine(GetRoom());
-                                Thread.Sleep(500);
-                                Console.WriteLine($"Suddenly, you catch the attention of a {monster.Name} as it prepares to attack you!"); ;
-                                #region Encounter Loop
-                                bool reload = false;
-                                do
-                                {
-                                    #region Menu
+                                //if (monster.Count >= 0)
+                                //{
                                     Console.WriteLine("\nPlease choose an action:\n\t" +
                                           "A) Attack\n\t" +
-                                          //"R) Run Away\n\t" +
                                           "P) Player Info\n\t" +
                                           "M) Monster Info\n\t" +
                                           "E) Exit\n");
@@ -60,13 +67,6 @@ namespace WoW_Dungeon_App
                                         case ConsoleKey.A:
                                             reload = Combat.DoBattle(player, monster);
                                             break;
-
-                                        //case ConsoleKey.R:
-                                        //    Console.WriteLine($"\nRun Away! {monster.Name} attacks you as you flee.\n");
-
-                                        //    //Combat.DoAttack(monster, player);
-                                        //    reload = true;//"reload" the monster and the room
-                                        //    break;
                                         case ConsoleKey.P:
                                             Console.WriteLine(player);
                                             break;
@@ -84,43 +84,54 @@ namespace WoW_Dungeon_App
                                             break;
                                     }//end switch
 
-                                    if (player.Life <= 0)
-                                    {
-                                        Console.Clear();
-                                        Console.ForegroundColor = ConsoleColor.Red;
-                                        Console.WriteLine("\nYou were not prepared for the true might of Illidan Stormrage...");
-                                        Console.ResetColor();
-                                        exit = true;
-                                    }
-                                    #endregion
-                                } while (!reload && !exit);
-                                #endregion
-                            } while (!exit);
-                            #endregion
-                        }
-                        Console.WriteLine($"\nYou defeated {player.Score} monster{(player.Score == 1 ? "." : "s")} out of 11 total monsters.\n");
-                        Console.WriteLine("Care for another adventure?\n\t1) Re-enter the Black Temple\n\t2) Flee");
+                                if (player.Life <= 0)
+                                {
+                                    Console.Clear();
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("\nYou were not prepared for the true might of Illidan Stormrage...");
+                                    Console.ResetColor();
+                                    exit = true;
+                                }
+                                //}
+                                //else
+                                //{
+                                //    exit = true;
+                                //}
+
+                            } while (!reload && !exit);
+                        } while (!exit);
+                        //}
+                        //else
+                        //{
+                       
+                        //Console.Clear();
+                        Console.WriteLine($"\nYou defeated {player.Score} monster{(player.Score == 1 ? "." : "s.")}\n");
+                        Console.WriteLine("Care for another adventure?\n\t1) Yes\n\t2) No");
                         ConsoleKey retry = Console.ReadKey(true).Key;
                         switch (retry)
                         {
                             case ConsoleKey.D1:
                             case ConsoleKey.NumPad1:
                                 Console.Clear();
-                                return;
                                 break;
+                                //return;
+                            //break;
                             case ConsoleKey.D2:
                             case ConsoleKey.NumPad2:
                             case ConsoleKey.Escape:
                                 Console.Clear();
                                 Descriptions.Quitter();
                                 isPlaying = true;
-                                return;
+                                break;
                             default:
+                                Console.Clear();
                                 Console.WriteLine("Aye, that choice be invalid. Try again, adventurer.");
                                 break;
                         }
-                            break;
-                        
+                        //}
+                         //} while (!exit);
+                        break;
+
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
                     case ConsoleKey.Escape:
@@ -131,12 +142,8 @@ namespace WoW_Dungeon_App
                         Console.WriteLine("Aye, that choice be invalid. Try again, adventurer.");
                         break;
                 }
-
             } while (!isPlaying);
-            #endregion
-          //  Console.WriteLine($"You defeated {player.Score} monster{(player.Score == 1 ? "." : "s.")}");
-            //Do you want to play again? 
-            //if input == "Y" then Main(args);
+
 
         }//end Main()
         #region Room Generation
