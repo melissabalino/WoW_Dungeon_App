@@ -16,7 +16,7 @@ namespace WoW_Dungeon_App
         {
             Console.SetWindowSize(120, 30);
             Signatures.Header("World of Warcraft: Burning Crusade");
-            //Descriptions.Introduction();
+            Descriptions.Introduction();
 
             bool isPlaying = false;
             do
