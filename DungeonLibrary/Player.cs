@@ -17,9 +17,6 @@ namespace WoW_DungeonLibrary
         private bool _isEnhanced;
         private string _description;
 
-
-
-
         public string Faction { get; set; }
         public string Race { get; set; }
         public string PlayerClass { get; set; }
@@ -119,7 +116,10 @@ namespace WoW_DungeonLibrary
             }
             return damage + bonusDamage;
         }
-
+        public override int CalcHitChance()
+        {
+            return base.CalcDodge() + EquippedWeapon.BonusHitChance;
+        }
         //Random rand = new Random();
         //int damage = rand.Next(EquippedWeapon.MinDamage, EquippedWeapon.MaxDamage);
         //if (IsEnhanced)

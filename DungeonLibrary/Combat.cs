@@ -42,7 +42,7 @@ namespace WoW_DungeonLibrary
             {
                 player.Score++;//
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\nYou have slain the {monster.Name}!");
+                Console.WriteLine($"\nYou have slain {monster.Name}!");
                 Console.ResetColor();
                 return true;
             }

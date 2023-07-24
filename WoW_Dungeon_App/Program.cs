@@ -86,6 +86,7 @@ namespace WoW_Dungeon_App
 
                                     if (player.Life <= 0)
                                     {
+                                        Console.Clear();
                                         Console.ForegroundColor = ConsoleColor.Red;
                                         Console.WriteLine("\nYou were not prepared for the true might of Illidan Stormrage...");
                                         Console.ResetColor();
@@ -97,7 +98,27 @@ namespace WoW_Dungeon_App
                             } while (!exit);
                             #endregion
                         }
-                            isPlaying = true;
+                        Console.WriteLine($"\nYou defeated {player.Score} monster{(player.Score == 1 ? "." : "s")} out of 11 total monsters.\n");
+                        Console.WriteLine("Care for another adventure?\n\t1) Re-enter the Black Temple\n\t2) Flee");
+                        ConsoleKey retry = Console.ReadKey(true).Key;
+                        switch (retry)
+                        {
+                            case ConsoleKey.D1:
+                            case ConsoleKey.NumPad1:
+                                Console.Clear();
+                                return;
+                                break;
+                            case ConsoleKey.D2:
+                            case ConsoleKey.NumPad2:
+                            case ConsoleKey.Escape:
+                                Console.Clear();
+                                Descriptions.Quitter();
+                                isPlaying = true;
+                                return;
+                            default:
+                                Console.WriteLine("Aye, that choice be invalid. Try again, adventurer.");
+                                break;
+                        }
                             break;
                         
                     case ConsoleKey.D2:
@@ -113,7 +134,7 @@ namespace WoW_Dungeon_App
 
             } while (!isPlaying);
             #endregion
-            Console.WriteLine($"You defeated {player.Score} monster{(player.Score == 1 ? "." : "s.")}");
+          //  Console.WriteLine($"You defeated {player.Score} monster{(player.Score == 1 ? "." : "s.")}");
             //Do you want to play again? 
             //if input == "Y" then Main(args);
 

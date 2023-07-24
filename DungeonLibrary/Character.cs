@@ -27,20 +27,9 @@
         public int Life
         {
             get { return _life; }
-            set
-            {
-                if (value <= MaxLife)
-                {
-                    _life = value;
-                }
-                else
-                {
-                    _life = MaxLife;
-                }
-            }
+            set { _life = (value <= MaxLife ? value : MaxLife);}
         }
  
-        //Default CTOR
         public Character() { }
 
         //FQ CTOR

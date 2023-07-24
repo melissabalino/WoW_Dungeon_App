@@ -65,11 +65,6 @@ namespace WoW_DungeonLibrary
             m.Enqueue(netherDragon);
             m.Enqueue(illidanStormrage);
             return m;
-            //if (m.Count == 0)
-            //{
-            //    reload = true;
-            //}
-
         }
 
         public override int CalcDamage()
